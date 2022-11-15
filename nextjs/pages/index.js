@@ -10,6 +10,9 @@ const Index = (data2) => {
   const [state, setState] = useState([])
 
   useEffect(() => {
+      while(localStorage.getItem('items') == null){
+    localStorage.setItem('items', JSON.stringify([  ]))
+  }
     if (items) {
       arr = JSON.parse(localStorage.getItem('items'))
       arr.push(items)
